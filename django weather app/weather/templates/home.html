@@ -1,0 +1,48 @@
+{% extends 'base.html' %} {% block content %}
+
+<div class="content_wrapper" id="app">
+  <div v-if="infos.city">
+    <h1>
+      Weather Here
+      <div class="date"></div>
+    </h1>
+    <form class="form" action="" method="get">
+     <span>
+		<input class="input" name="la" placeholder = "Latittude"/>
+		<input class="input" name="lg" placeholder = "Longitude"/>
+	</span>
+      <button class="submit_btn" type="s ubmit">Get Info</button>
+    </form>
+    <div class="weather_card">
+      <div
+        class="weather_card_img" :style="{backgroundImage:
+        https://openweathermap.org/img/wn/{{data.icon}}.png}" >
+        <div class="weather_card_state">
+          <span class="material-icons">
+            <img src="https://openweathermap.org/img/wn/{{data.icon}}.png" />
+          </span>
+        </div>
+      </div>
+
+      <div class="weather_card_infos">
+        <div class="weather_card_infos_title">
+          {{data.Area}} / {{data.desc}}
+        </div>
+        <div class="weather_card_infos_temp">
+          {{data.c_temp}} <sup class="degree">o</sup>C / {{data.k_temp}}<sup
+            class="degree"
+            >o</sup
+          >F
+        </div>
+        <div class="bottom">
+          <hr />
+          <div class="weather_card_infos_bottom">
+            Humidity: {{data.humidity}}-pressure:{{data.pressure}}Pa
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+{% endblock content%}
