@@ -1,7 +1,7 @@
 # Know-your-environment
-Django-project with Openweather API
+## Django-project with Openweather API
 
-Working:-
+### Working:-
 It is a #django based web application You need to
 enter the geocoordinates as the input,
 the values are taken as latitude and the longitude of the location.
